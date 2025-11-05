@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="numero" placeholder="Inserisci un numero">
+    <button>Invia</button>
+    <h1>Risultato:</h1>
+    <script>
+        let input = document.querySelector('input');
+        let title = document.querySelector('h1');
+        let button = document.querySelector('button');
+
+
+        function isEven(numero){
+
+            numero = Number(numero);
+
+            if(isNaN(numero)) return null;
+
+            return numero % 2 === 0;
+        }
+          
+
+
+        button.addEventListener('click', () => {
+            let risultato = isEven(input.value);
+
+            if (risultato === null) {
+                title.innerHTML = "Inserisci un numero valido!";
+            } else {
+                title.innerHTML = `Risultato: ${risultato}`;
+            }
+        });
+    </script>
+</body>
+</html>
